@@ -36,3 +36,13 @@ frTranslator = {
     "novembre": "november",
     "décembre": "december"
 }
+
+while True:
+    saisie_month = input('Veuillez saisir un mois pour connaitre son nombre de jour ')
+    if saisie_month in months:
+        print(f"Days in {saisie_month} is {months.get(saisie_month)}")
+    elif saisie_month in frTranslator:
+        english_month = frTranslator.get(saisie_month)
+        print(f"il y a {months.get(english_month)} jours dans {saisie_month} ")
+    else:
+        print('Ce mois est inconnu')

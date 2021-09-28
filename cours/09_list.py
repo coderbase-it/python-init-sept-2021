@@ -60,3 +60,32 @@ liste[0]='dog'
 liste[2][1]= 50
 print(liste, liste1)
 print(id(liste[2]), id(liste1[2]))
+
+# test appartenance
+if 4 in ma_liste:
+    print('Youpi')
+
+# for
+for element in ma_liste:
+    print(element)
+
+# Trier les listes
+ma_liste = [ 5 , 2 , 3.14 , -7 , 1]
+ma_liste.sort()# order croissant / trie par ordre mathématique car nombre
+print(ma_liste)
+
+ma_liste = [ 5 , 2 , 3.14 , -7 , 1]
+ma_liste.sort(reverse=True)# order décroissant / trie par ordre mathématique car nombre
+print(ma_liste)
+
+ma_liste = [ 5 , 2 , 3.14 , -7 , 1]
+ma_liste.reverse() # inverse la liste
+print(ma_liste)
+
+# passer d'une liste à un string et inversement
+ma_liste = [ 'oui', 'yes', 'ok']
+print("/".join(ma_liste))# oui/yes/ok
+
+# chemin inverse
+ma_chaine = "oui:yes:ok"
+print(ma_chaine.split(":")) # ['oui', 'yes', 'ok']

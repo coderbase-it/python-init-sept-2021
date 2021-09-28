@@ -4,3 +4,14 @@ la liste [32, 5, 12, 8, 3, 75, 2, 15],
 ce programme devrait afficher : le plus grand élément de cette liste soit la valeur 75. (modifié)
 Bonus Exercice  : ne pas utiliser la function max , min et avg de Python ( ni la function sort ^^ )
 """
+liste=[]
+maximum = 0
+# si liste existe et comme liste est une liste ( si liste contient au moins un élèment)
+if liste:
+    # boucler
+    for element in liste:
+        if element > maximum:
+            maximum = element
+    print(maximum)
+else:
+    print('liste vide')

@@ -1,13 +1,39 @@
 from tkinter import Tk, Label, StringVar, Entry, Button
+import sqlite3
+
+def create_database():
+    # DB-API
+    connection = sqlite3.connect('base.db')
+    cursor = connection.cursor()
+    cursor.execute("CREATE TABLE IF NOT EXISTS contacts(name TEXT, phone TEXT)")
+    connection.commit()
+    cursor.close()
+    connection.close()
+
 
 def insert():
     print('insert')
     print(name_var.get())
     print(phone_var.get())
+    connection = sqlite3.connect('base.db')
+    cursor = connection.cursor()
+    cursor.execute("INSERT INTO contacts values (?,?)", (name_var.get(), phone_var.get() ))
+    connection.commit()
+    cursor.close()
+    connection.close()
 
 def show():
     print('show')
-
+    connection = sqlite3.connect('base.db')
+    cursor = connection.cursor()
+    cursor.execute("SELECT * from contacts")
+    #connection.commit() pas commit car pas de modifications
+    for element in cursor.fetchall():
+        print(element)
+        name, phone = element
+        print(name, phone)
+    cursor.close()
+    connection.close()
 
 def init():
     # creation de la fenetre
@@ -47,4 +73,5 @@ def init():
 
 
 if __name__ == "__main__":
+    create_database()
     init()

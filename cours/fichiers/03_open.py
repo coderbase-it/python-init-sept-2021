@@ -33,3 +33,12 @@ with open('mon_fichier.txt', "a") as fichier:
     # pas besoin de fermer le fichier
 
 print('Fin du programme on sait que le fichier est fermé')
+
+# petit exemple lecture + écriture fichier
+with open('mon_fichier.txt') as fichier:
+    contenu = fichier.read()
+
+print(contenu)
+contenu *=2
+with open('mon_fichier.txt', "w") as fichier:
+    fichier.write(contenu)

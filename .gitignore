@@ -3,3 +3,7 @@ exercices/organizer_files/angular.png
 exercices/organizer_files/Charte intervenant Pierre Nédélec.pdf
 exercices/organizer_files/python-3.9.2-amd64.exe
 *.exe
+build/**
+dist
+env
+superenv

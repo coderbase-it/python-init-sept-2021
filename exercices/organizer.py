@@ -1,5 +1,6 @@
 import os
 import shutil
+
 folder_dict = {
     "IMAGES": [".jpeg", ".jpg", ".tiff", ".gif", ".bmp", ".png", ".bpg", ".svg",
                ".heif", ".psd"],
@@ -14,13 +15,12 @@ folder_dict = {
     "EXE": [".exe"]
 }
 
-chemin = os.path.join(os.getcwd(), 'organizer_files')
-for element in os.scandir(chemin):
-    print(element.name , element.path, element.is_dir(), element.is_file())
+for element in os.scandir():
+    print(element.name, element.path, element.is_dir(), element.is_file())
     if element.is_file():
         _, extension = os.path.splitext(element.name)
         for key, values in folder_dict.items():
             if extension.strip().lower() in values:
-                chemin_dossier= os.path.join(chemin, key)
+                chemin_dossier = os.path.join(os.getcwd(), key)
                 os.makedirs(chemin_dossier, exist_ok=True)
-                shutil.move( element.path, chemin_dossier)
+                shutil.move(element.path, chemin_dossier)

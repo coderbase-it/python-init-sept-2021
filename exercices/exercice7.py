@@ -27,9 +27,12 @@ structure = {
 # Documents/Factures
 # Bonus il faut pouvoir relancer le script plusieurs sans bug
 print(structure.items())
+#os.chdir('..')
 for key, values in structure.items():
     # chemin_folder = os.path.join(os.getcwd(), key)
     # os.makedirs(chemin_folder, exist_ok=True)
     for value in values:
+        # changer de répertoire
         chemin_subfolder = os.path.join(os.getcwd(), key, value)
+        print(chemin_subfolder)
         os.makedirs(chemin_subfolder, exist_ok=True)

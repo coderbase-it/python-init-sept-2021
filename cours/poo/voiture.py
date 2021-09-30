@@ -6,6 +6,7 @@ class Voiture:
         self.color = couleur
         self.brand = marque
 
+
     def klaxonner(self):
         print('Tchou Tchou')
 
@@ -27,23 +28,3 @@ class Voiture:
     def __len__(self):
         return len(self.color)
 
-print(__name__)
-
-if __name__ == "__main__":
-    ma_voiture = Voiture("bleu", "Ford")
-    print(ma_voiture)
-    print(ma_voiture.color, ma_voiture.brand)
-    ma_voiture.repeindre('rouge')
-    print(ma_voiture)
-    print(f"Hello {ma_voiture}")
-    ma_voiture2 = Voiture('Noire', 'Bmw')
-    print(ma_voiture == ma_voiture2)
-    ma_voiture.__eq__(ma_voiture2)
-
-    print(ma_voiture > ma_voiture2)
-    print(len(ma_voiture2))
-
-    print(ma_voiture.__dir__())
-    print(ma_voiture.__dict__)
-else:
-    print('fichier importé')

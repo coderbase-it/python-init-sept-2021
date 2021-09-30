@@ -5,12 +5,15 @@ print('Content-type: text/html')
 
 name = "Pierre"
 
-print(f"""
+print("""
 <html>
 <head> <title> Titre de la page
 </title> </head>
+<style>
+h3 {color : red}
+</style>
 <body>
-Mon nom est {name}
+<h3> Mon nom est {name} </h3>
 </body>
 </html>
 """)
